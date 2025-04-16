@@ -3,13 +3,13 @@ import { Component } from '@angular/core';
 
 
 @Component({
-  selector: 'app-tables',
+  selector: 'app-utilidad',
   standalone: true,
   imports: [CommonModule],
-  templateUrl: './tables.component.html',
-  styleUrl: './tables.component.css'
+  templateUrl: './utilidad.component.html',
+  styleUrl: './utilidad.component.css'
 })
-export class TablesComponent {
+export class UtilidadComponent {
 
   // Ejemplo. Luego se debe reemplazar estos datos por los que se obtengan de la API. Traer los datos desde la tabla.
   data = [

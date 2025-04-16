@@ -14,9 +14,9 @@
             Poste rojo
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Utilidad</a></li>
-            <li><a class="dropdown-item" href="#">Ventas</a></li>
-            <li><a class="dropdown-item" href="#">Provedores</a></li>
+            <li><a class="dropdown-item" routerLink="/utilidad" >Utilidad</a></li>
+            <li><a class="dropdown-item">Ventas</a></li>
+            <li><a class="dropdown-item" routerLink="/proveedores">Provedores</a></li>
             <li><a class="dropdown-item" href="#">Inventario</a></li>
             <li><a class="dropdown-item" href="#">Borrador</a></li>
           </ul>
@@ -34,3 +34,5 @@
     </div>
   </div>
 </nav>
+
+<router-outlet></router-outlet>
