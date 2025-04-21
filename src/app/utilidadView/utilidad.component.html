@@ -1,0 +1,148 @@
+<div class="table-container table-año">
+
+  <section class="tables">
+    <div class="title-container">
+      <h2>Utilidad Por Año</h2>
+  
+      <div class="print-buttons">
+        <button >Excel</button>
+        <button >PDF</button>
+      </div>
+  
+      <div class="search">
+        <p>Search:</p>
+        <input type="text"/>
+      </div>
+    </div>
+  
+
+    <table class="custom-table">
+      <thead>
+        <tr>
+          <th>Año</th>
+          <th>Utilidad</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- 7 filas estáticas de ejemplo, traer la información desde la API -->
+        <tr *ngFor="let row of data.slice(0, 7)">
+          <td>{{ row.anio }}</td>
+          <td>{{ row.utilidad }}</td>
+        </tr>
+      </tbody>
+    </table>
+  
+
+    <nav class="pagination-container" aria-label="Page navigation example">
+      <ul class="pagination">
+        <li class="controllers"><p>Previous</p></li>
+        <li class="page-item"><a class="page-link" href="#">1</a></li>
+        <li class="page-item"><a class="page-link" href="#">2</a></li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        <li class="controllers"><p>Next</p></li>
+      </ul>
+    </nav>
+  </section>
+</div>
+
+
+<div class="table-container table-mes">
+
+  <section class="tables">
+    <div class="title-container">
+      <h2>Utilidad Por Mes</h2>
+  
+      <div class="print-buttons">
+        <button >Excel</button>
+        <button >PDF</button>
+      </div>
+  
+      <div class="search">
+        <p>Search:</p>
+        <input type="text"/>
+      </div>
+    </div>
+  
+
+    <table class="custom-table">
+      <thead>
+        <tr>
+          <th>Año</th>
+          <th>Mes</th>
+          <th>Utilidad</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- 7 filas estáticas de ejemplo, traer la información desde la API -->
+        <tr *ngFor="let row of data2.slice(0, 7)">
+          <td>{{ row.anio }}</td>
+          <td>{{ row.mes }}</td>
+          <td>{{ row.utilidad }}</td>
+        </tr>
+      </tbody>
+    </table>
+  
+
+    <nav class="pagination-container" aria-label="Page navigation example">
+      <ul class="pagination">
+        <li class="controllers"><p>Previous</p></li>
+        <li class="page-item"><a class="page-link" href="#">1</a></li>
+        <li class="page-item"><a class="page-link" href="#">2</a></li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        <li class="controllers"><p>Next</p></li>
+      </ul>
+    </nav>
+  </section>
+</div>
+
+
+<div class="table-container table-dia">
+
+  <section class="tables">
+    <div class="title-container">
+      <h2>Utilidad Por Día</h2>
+  
+      <div class="print-buttons">
+        <button >Excel</button>
+        <button >PDF</button>
+      </div>
+  
+      <div class="search">
+        <p>Search:</p>
+        <input type="text"/>
+      </div>
+    </div>
+  
+
+    <table class="custom-table">
+      <thead>
+        <tr>
+          <th>Año</th>
+          <th>Mes</th>
+          <th>Fecha</th>
+          <th>Utilidad</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- 7 filas estáticas de ejemplo, traer la información desde la API -->
+        <tr *ngFor="let row of data3.slice(0, 7)">
+          <td>{{ row.anio }}</td>
+          <td>{{ row.mes }}</td>
+          <td>{{ row.fecha }}</td>
+          <td>{{ row.utilidad }}</td>
+        </tr>
+      </tbody>
+    </table>
+  
+<!-- es un ejemplo -->
+    <nav class="pagination-container" aria-label="Page navigation example">
+      <ul class="pagination">
+        <li class="controllers"><p>Previous</p></li>
+        <li class="page-item"><a class="page-link" href="#">1</a></li>
+        <li class="page-item"><a class="page-link" href="#">2</a></li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        <li class="controllers"><p>Next</p></li>
+      </ul>
+    </nav>
+  </section>
+</div>
