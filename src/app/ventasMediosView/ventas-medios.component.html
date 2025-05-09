@@ -1,0 +1,101 @@
+<div class="table-container table-año">
+
+  <section class="tables">
+    <div class="title-container">
+      <h2>Ventas Por Año Metodos de Pago</h2>
+    </div>
+  
+    <table class="custom-table">
+      <thead>
+        <tr>
+          <th>Año</th>
+          <th>Metodo de Pago</th>
+          <th>Total Pagado</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let row of data">
+          <td>{{ row.anio }}</td>
+          <td>{{ row.metodoPago }}</td>
+          <td>{{ row.totalPagado | number: '1.0-0' }}</td>
+        </tr>
+        <tr *ngIf="data.length > 0" class="total-row">
+          <td colspan="2"><strong>Total del anio</strong></td>
+          <td><strong>{{ getTotalPagado() | number: '1.0-0' }}</strong></td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+</div>
+
+
+<div class="table-container table-mes">
+
+  <section class="tables">
+    <div class="title-container">
+      <h2>Ventas Por Mes</h2>
+    </div>
+  
+
+    <table class="custom-table">
+      <thead>
+        <tr>
+          <th>Año</th>
+          <th>Mes</th>
+          <th>Metodo de Pago</th>
+          <th>Total Pagado</th>
+        </tr>
+      </thead>
+      <tbody>
+        <ng-container *ngFor="let mes of datosAgrupados">
+          <tr *ngFor="let item of mes.items">
+            <td>{{ mes.anio }}</td>
+            <td>{{ mes.mes }}</td>
+            <td>{{ item.metodoPago }}</td>
+            <td class="text-right">{{ item.totalPagado | number:'1.0-0' }}</td>
+          </tr>
+          <tr class="total-row">
+            <td colspan="3" class="text-right"><strong>Total del mes</strong></td>
+            <td class="text-right"><strong>{{ mes.totalMes | number:'1.0-0' }}</strong></td>
+          </tr>
+        </ng-container>
+      </tbody>
+    </table>
+  
+  </section>
+</div>
+
+
+<div class="table-container table-dia">
+
+  <section class="tables">
+    <div class="title-container">
+      <h2>Ventas Por Día</h2>
+    </div>
+
+    <table class="custom-table">
+      <thead>
+        <tr>
+          <th>Año</th>
+          <th>Mes</th>
+          <th>Fecha</th>
+          <th>Ventas</th>
+        </tr>
+      </thead>
+      <tbody>
+        <ng-container *ngFor="let grupo of datosPorFecha">
+          <tr *ngFor="let item of grupo.items">
+            <td>{{ grupo.anio }}</td>
+            <td>{{ grupo.mes }}</td>
+            <td>{{ grupo.fecha }}</td>
+            <td class="text-right">{{ item.utilidad | number:'1.0-0' }}</td>
+          </tr>
+          <tr class="total-row">
+            <td colspan="3" class="text-right"><strong>Total del día</strong></td>
+            <td class="text-right"><strong>{{ grupo.totalDia | number:'1.0-0' }}</strong></td>
+          </tr>
+        </ng-container>
+      </tbody>
+    </table>
+  </section>
+</div>

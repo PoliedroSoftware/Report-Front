@@ -1,13 +1,12 @@
 .table-container{
   width: 100%;
   display: flex;
-  min-height: 70vh;
+  min-height: 25vh;
   justify-content: center;
   padding-top: 2rem;
   padding-bottom: 2rem;
   }
-  
-  
+
   .tables{
     width: 80%;
     display: flex;
@@ -27,6 +26,10 @@
     font-weight: 400;
   }
   
+  .total tbody tr {
+    background-color: #f2f2f2;
+  }
+
   .title-container .print-buttons{
     width: 50%;
     display: flex;
@@ -91,7 +94,6 @@
     background-color: #f2f2f2;
   }
   
-  
   .pagination-container{
     display: flex;
     justify-content: end;
@@ -114,6 +116,7 @@
     justify-content: end;
     text-align: end;
   }
+
   .controllers p{
     margin-top: 7px;
   }

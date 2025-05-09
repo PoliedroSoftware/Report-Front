@@ -8,6 +8,7 @@ import { Component } from '@angular/core';
   templateUrl: './proveedores.component.html',
   styleUrl: './proveedores.component.css'
 })
+
 export class ProveedoresComponent {
   // Ejemplo. Luego se debe reemplazar estos datos por los que se obtengan de la API. Traer los datos desde la tabla.
   data = [

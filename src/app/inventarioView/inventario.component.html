@@ -1,9 +1,35 @@
-<h2>Inventario</h2>
-<div class="table-container table-año">
+<div class="table-container">
+
+  <section class="tables">
+    <div class="title-container total-container">
+      <h2>Total Inventario A Costo y Venta</h2>
+    </div>
+  
+    <table class="custom-table total">
+      <tbody>
+        <tr>
+          <td><strong>Saldo Total Costo</strong></td>
+          <td><strong>Saldo Total Venta</strong></td>
+          <td><strong>Diferencia</strong></td>
+          <td><strong>Promedio</strong></td>
+        </tr>
+        <tr>
+          <td>77.241.133</td>
+          <td>77.241.133</td>
+          <td>77.241.133</td>
+          <td>77.241.133</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+</div>
+
+
+<div class="table-container">
 
   <section class="tables">
     <div class="title-container">
-      <h2>Utilidad Por Año</h2>
+      <h2>Inventario</h2>
   
       <div class="print-buttons">
         <button >Excel</button>
@@ -20,25 +46,73 @@
     <table class="custom-table">
       <thead>
         <tr>
-          <th>Codigo</th>
+          <th>Proveedor</th>
+          <th>Saldo</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let row of data.slice(0, 7)">
+          <td>{{ row.proveedor }}</td>
+          <td>{{ row.saldo }}</td>
+        </tr>
+      </tbody>
+    </table>
+  
+
+    <nav class="pagination-container" aria-label="Page navigation example">
+      <ul class="pagination">
+        <li class="controllers"><p>Previous</p></li>
+        <li class="page-item"><a class="page-link" href="#">1</a></li>
+        <li class="page-item"><a class="page-link" href="#">2</a></li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        <li class="controllers"><p>Next</p></li>
+      </ul>
+    </nav>
+  </section>
+</div>
+
+
+<div class="table-container">
+
+  <section class="tables">
+    <div class="title-container">
+      <h2>Saldo Por Facturas</h2>
+  
+      <div class="print-buttons">
+        <button >Excel</button>
+        <button >PDF</button>
+      </div>
+  
+      <div class="search">
+        <p>Search:</p>
+        <input type="text"/>
+      </div>
+    </div>
+  
+
+    <table class="custom-table">
+      <thead>
+        <tr>
+          <th>Código</th>
           <th>Producto</th>
-          <th>Precio</th>
-          <th>Costo </th>
+          <th>Precio Costo</th>
+          <th>Precio Venta</th>
           <th>Inventario</th>
+          <th>Porcentaje</th>
           <th>Total Costo</th>
           <th>Total Venta</th>
         </tr>
       </thead>
       <tbody>
-        <!-- 7 filas estáticas de ejemplo, traer la información desde la API -->
-        <tr *ngFor="let row of data.slice(0, 7)">
-          <td>{{ row.codigo }}</td>
-          <td>{{ row.producto }}</td>
-          <td>{{ row.precio }}</td>
-          <td>{{ row.costo }}</td>
-          <td>{{ row.inventario }}</td>
-          <td>{{ row.totalcosto }}</td>
-          <td>{{ row.totalventa }}</td>
+        <tr  *ngFor="let item of dataProductos">
+          <td>{{ item.codigo }}</td>
+          <td>{{ item.producto }}</td>
+          <td>{{ item.precioCosto }}</td>
+          <td>{{ item.precioVenta }}</td>
+          <td>{{ item.inventario }}</td>
+          <td>{{ item.porcentaje }}</td>
+          <td>{{ item.totalCosto }}</td>
+          <td>{{ item.totalVenta }}</td>
         </tr>
       </tbody>
     </table>
@@ -55,56 +129,3 @@
     </nav>
   </section>
 </div>
-
-
-<div class="table-container table-mes">
-
-  <section class="tables">
-    <div class="title-container">
-      <h2>Utilidad Por Mes</h2>
-  
-      <div class="print-buttons">
-        <button >Excel</button>
-        <button >PDF</button>
-      </div>
-  
-      <div class="search">
-        <p>Search:</p>
-        <input type="text"/>
-      </div>
-    </div>
-  
-
-    <table class="custom-table">
-      <thead>
-        <tr>
-          <th>Saldo Total Costo</th>
-          <th>Saldo Total Venta</th>
-          <th>Diferencia</th>
-        </tr>
-      </thead>
-      <tbody>
-        <!-- 7 filas estáticas de ejemplo, traer la información desde la API -->
-        <tr *ngFor="let row of data2.slice(0, 7)">
-          <td>{{ row.saldoTotalCosto }}</td>
-          <td>{{ row.SaldoTotalVenta }}</td>
-          <td>{{ row.diferencia }}</td>
-        </tr>
-      </tbody>
-    </table>
-  
-
-    <nav class="pagination-container" aria-label="Page navigation example">
-      <ul class="pagination">
-        <li class="controllers"><p>Previous</p></li>
-        <li class="page-item"><a class="page-link" href="#">1</a></li>
-        <li class="page-item"><a class="page-link" href="#">2</a></li>
-        <li class="page-item"><a class="page-link" href="#">3</a></li>
-        <li class="controllers"><p>Next</p></li>
-      </ul>
-    </nav>
-  </section>
-</div>
-
-
-
