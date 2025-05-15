@@ -14,7 +14,7 @@ export class BorradoresComponent {
   cliente: string;
   total: string;
 }[] = [
-  // { fecha: "01/02/12", referencia: '77.831.294', cliente: '284.598.893', total: '261.216.464' },
+   { fecha: "01/02/12", referencia: '77.831.294', cliente: '284.598.893', total: '261.216.464' },
 ];
 
   data2 = [

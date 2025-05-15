@@ -1,0 +1,71 @@
+
+<div class="table-container table-año">
+
+  <section class="tables">
+    <div class="title-container">
+      <h2>Utilidad Por Año</h2>
+  
+      <div class="print-buttons">
+        <button >Excel</button>
+        <button >PDF</button>
+      </div>
+  
+      <div class="search">
+        <p>Search:</p>
+        <input type="text"/>
+      </div>
+    </div>
+  
+
+    <table class="custom-table">
+      <thead>
+        <tr>
+          <th>Sku</th>
+          <th>Name</th>
+          <th>Presentacion</th>
+          <th>Cost</th>
+          <th>Sale</th>
+          <th>Inventory</th>
+          <th>Percentage</th>
+          <th>Subtotal Cost</th>
+          <th>Subtotal Sale</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- 7 filas estáticas de ejemplo, traer la información desde la API 
+         
+        -->
+   
+         <tr *ngFor= "let row of inventarios" >
+         
+          <td>{{ row.sku }}</td>
+          <td>{{ row.name }}</td>
+          <td>{{ row.presentation}}</td>
+          <td>{{ row.cost }}</td>
+          <td>{{ row.sale }}</td>
+          <td>{{ row.inventory}}</td>
+          <td>{{ row.percentage}}</td>
+          <td>{{ row.subtotal_Cost }}</td>
+          <td>{{ row.subtotal_sale }}</td>
+          
+        </tr>
+      </tbody>
+    </table>
+  
+
+    <nav class="pagination-container" aria-label="Page navigation example">
+      <ul class="pagination">
+    
+        
+        <li class=""><a class="page-link"  (click)="recuperarPorpagina(1,10)">1</a></li>
+        <li class="page-item"><a class="page-link"  (click)="recuperarPorpagina(2,10)">2</a></li>
+        <li class="page-item"><a class="page-link"  (click)="recuperarPorpagina(3,10)">3</a></li>
+        <li class="page-item"><a class="page-link"  (click)="recuperarPorpagina(4,10)">4</a></li>
+        <li class="page-item"><a class="page-link"  (click)="recuperarPorpagina(4,10)">5</a></li>
+       
+      </ul>
+    </nav>
+  </section>
+</div>
+
+
