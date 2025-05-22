@@ -24,7 +24,7 @@ export class InventoryComponent implements OnInit {
   constructor(private inventoryService: InventoryService) { }
 
    ngOnInit(): void {
-   this.recuperarTodos();
+   this.recuperarPorpagina(1, 10)
   
 }
   
@@ -41,8 +41,12 @@ recuperarTodos():void {
      })
     };
 
+   
+
+
 
     recuperarPorpagina(valor3:any, valor4:any):void {
+      alert(77777777);
     this.inventarios=[];
       this.inventoryService.getInventarioP(valor3, valor4).subscribe(result =>{
         result.forEach(nombre => this.inventarios.push(nombre));

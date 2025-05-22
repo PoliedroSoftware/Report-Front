@@ -1,6 +1,11 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 
+import { Utilidad } from './utilidad';
+//import { HEROES } from './mock-heroes';
+import { UtilidadService } from './utilidad.service';
+
+
 
 @Component({
   selector: 'app-utilidad',
@@ -9,36 +14,74 @@ import { Component } from '@angular/core';
   templateUrl: './utilidad.component.html',
   styleUrl: './utilidad.component.css'
 })
-export class UtilidadComponent {
+export class UtilidadComponent  {
 
   // Ejemplo. Luego se debe reemplazar estos datos por los que se obtengan de la API. Traer los datos desde la tabla.
-  data = [
-    { anio: 2025, utilidad: '77.831.294' },
-    { anio: 2024, utilidad: '284.598.893' },
-    { anio: 2023, utilidad: '291.807.805' },
-    { anio: 2022, utilidad: '261.216.464' },
-    { anio: 2021, utilidad: '204.585.135' },
-    { anio: 2020, utilidad: '140.700.110' },
-    { anio: 2019, utilidad: '31.690.032' }
-  ];
+  
 
-  data2 = [
-    { anio: 2025, mes: "Enero", utilidad: '77.831.294' },
-    { anio: 2024, mes: "Enero", utilidad: '284.598.893' },
-    { anio: 2023, mes: "Enero", utilidad: '291.807.805' },
-    { anio: 2022, mes: "Enero", utilidad: '261.216.464' },
-    { anio: 2021, mes: "Enero", utilidad: '204.585.135' },
-    { anio: 2020, mes: "Enero", utilidad: '140.700.110' },
-    { anio: 2019, mes: "Enero", utilidad: '31.690.032' }
-  ];
+utilidades: Array<any>=[];
+     miArray: any[][] = [];
+ 
+      valor1:any=1
+      valor2:any=2;
+      arrayPages:[]=[];
+     
+      utilidad: any;
+      totalAnio:any;
+      totalMes:any;
+      totalDia:any;
 
-  data3 = [
-    { anio: 2025, mes: "Enero", fecha: "Viernes", utilidad: '77.831.294' },
-    { anio: 2024, mes: "Enero", fecha: "Viernes", utilidad: '284.598.893' },
-    { anio: 2023, mes: "Enero", fecha: "Viernes", utilidad: '291.807.805' },
-    { anio: 2022, mes: "Enero", fecha: "Viernes", utilidad: '261.216.464' },
-    { anio: 2021, mes: "Enero", fecha: "Viernes", utilidad: '204.585.135' },
-    { anio: 2020, mes: "Enero", fecha: "Viernes", utilidad: '140.700.110' },
-    { anio: 2019, mes: "Enero", fecha: "Viernes", utilidad: '31.690.032' }
-  ];
+
+ 
+ 
+
+
+  constructor(private utilidadService: UtilidadService) { }
+ 
+  ngOnInit() {
+    // Agrupar data2 por año y mes
+   
+    this.myservice(); 
+   
+  }
+
+
+     myservice(): void {
+        this.utilidadService.getUtilidadP(1,10).subscribe(response => {
+        this.utilidad = response;
+        console.log(this.utilidad);
+        this.getTotalPagado()
+        this.getTotalPagadoMes();
+        this.getTotalPagadoDia();
+     })
+
+   };
+
+  
+
+
+  
+  getTotalPagado(): number {
+
+     this.totalAnio=this.utilidad.forYear.reduce((acc:any, curr:any) => acc + curr.totalPaid, 0);
+    console.log(this.totalAnio);
+    return  this.totalAnio;
+  }
+
+   getTotalPagadoMes(): number {
+
+     this.totalMes=this.utilidad.forMonth.reduce((acc:any, curr:any) => acc + curr.totalPaid, 0);
+    console.log(this.totalMes);
+    return  this.totalMes;
+  }
+
+    getTotalPagadoDia(): number {
+
+     this.totalDia=this.utilidad.forDay.reduce((acc:any, curr:any) => acc + curr.totalPaid, 0);
+    console.log(this.totalDia);
+    return  this.totalDia;
+  }
+
+   
+
 }

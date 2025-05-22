@@ -17,8 +17,11 @@ export class InventoryService {
     return this.http.get<Inventarios[]>(this.url);
     
   }
-  getInventarioP(PNumber:number, PSize:number): Observable<Inventarios[]> {
-    return this.http.get<Inventarios[]>(this.url+'?PageNumber='+PNumber+'&PageSize='+PSize);
+  getInventarioP(PNumber:number, PSize:number){
+
+   return this.http.get<Inventarios[]>(this.url+'/inventory-report?PageNumber='+PNumber+'&PageSize='+PSize);
+
+   
     
   }
 }
