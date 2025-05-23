@@ -7,29 +7,14 @@ import { environment } from '../../environments/environment';
   providedIn: 'root'
 })
 export class VentasMediosService {
-   private url: string ="http://134.122.125.60:5005/api/v1/payment-method-report?PageNumber=1&PageSize=10";
-
+   private url2: string ="http://134.122.125.60:5005/api/v1/payment-method-report?PageNumber=1&PageSize=10";
+   private url: string =environment.url;
   constructor(private http:HttpClient) { } 
 
-   getTodos() {
-    return this.http.get<any[]>(this.url);
-  }
+ 
 
-
-   getInventario(): Observable<VentasMedios[]> {
-      return this.http.get<VentasMedios[]>(this.url);
-      
-    }
-    getInventarioP(PNumber:number, PSize:number): Observable<VentasMedios[]> {
-      return this.http.get<VentasMedios[]>(this.url);
-      
-    }
-
-    getVentasMedios(): Observable<any> {
-    return this.http.get(this.url);
-  }
-
-
-
+   getVentasMedios(PNumber:number, PSize:number): Observable<any> {
+     return this.http.get(this.url+'payment-method-report?PageNumber='+PNumber+'&PageSize='+PSize);
+   }
 
 }

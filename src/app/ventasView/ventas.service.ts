@@ -13,14 +13,10 @@ export class VentasService {
  private url: string =environment.url
   constructor( private http:HttpClient) { }
 
-   getInventario(): Observable<Ventas[]> {
-    return this.http.get<Ventas[]>(this.url);
-    
-  }
-  getInventarioP(PNumber:number, PSize:number): Observable<Ventas[]> {
-    return this.http.get<Ventas[]>(this.url+'?PageNumber='+PNumber+'&PageSize='+PSize);
-    
-  }
-
-  
+   
+     getVentas(PNumber:number, PSize:number): Observable<Ventas[]> {
+       
+       return this.http.get<Ventas[]>(this.url+'sales-report?PageNumber='+PNumber+'&PageSize='+PSize);
+       
+    } 
 }

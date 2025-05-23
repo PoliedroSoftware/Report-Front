@@ -20,12 +20,9 @@ export class UtilidadComponent  {
   
 
 utilidades: Array<any>=[];
-     miArray: any[][] = [];
- 
-      valor1:any=1
-      valor2:any=2;
-      arrayPages:[]=[];
      
+      miArray: any[][] = [];
+      arrayPages:[]=[];
       utilidad: any;
       totalAnio:any;
       totalMes:any;
@@ -40,48 +37,17 @@ utilidades: Array<any>=[];
  
   ngOnInit() {
     // Agrupar data2 por año y mes
+    
    
-    this.myservice(); 
+    this.getUtilidadService(1,10); 
    
   }
 
 
-     myservice(): void {
-        this.utilidadService.getUtilidadP(1,10).subscribe(response => {
-        this.utilidad = response;
-        console.log(this.utilidad);
-        this.getTotalPagado()
-        this.getTotalPagadoMes();
-        this.getTotalPagadoDia();
-     })
-
-   };
-
-  
-
-
-  
-  getTotalPagado(): number {
-
-     this.totalAnio=this.utilidad.forYear.reduce((acc:any, curr:any) => acc + curr.totalPaid, 0);
-    console.log(this.totalAnio);
-    return  this.totalAnio;
-  }
-
-   getTotalPagadoMes(): number {
-
-     this.totalMes=this.utilidad.forMonth.reduce((acc:any, curr:any) => acc + curr.totalPaid, 0);
-    console.log(this.totalMes);
-    return  this.totalMes;
-  }
-
-    getTotalPagadoDia(): number {
-
-     this.totalDia=this.utilidad.forDay.reduce((acc:any, curr:any) => acc + curr.totalPaid, 0);
-    console.log(this.totalDia);
-    return  this.totalDia;
-  }
-
-   
-
+  getUtilidadService(valor1:any, valor2:any): void {
+      this.utilidadService.getUtilidadP(valor1, valor2).subscribe(response => {
+      this.utilidad = response;
+          
+    })
+  };
 }

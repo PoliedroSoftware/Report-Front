@@ -92,16 +92,14 @@ padding-bottom: 2rem;
 }
 
 
-.pagination-container{
-  display: flex;
-  justify-content: end;
-  padding-top: 10px;
-}
+
 
 .pagination{
 display: flex;
 gap: 10px;
 padding-right: 20px;
+justify-content: center;
+text-align: center;
 }
 
 .pagination .page-link{

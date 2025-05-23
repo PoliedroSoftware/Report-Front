@@ -35,15 +35,15 @@ export class VentasMediosComponent implements OnInit {
   ngOnInit() {
     // Agrupar data2 por año y mes
    
-    this.myservice(); 
+    this.getVentasMediosService(1,10); 
    
   }
 
 
-     myservice(): void {
-        this.ventasMediosService.getVentasMedios().subscribe(response => {
+        getVentasMediosService(valor1:any, valor2:any): void {
+        this.ventasMediosService.getVentasMedios(valor1, valor2).subscribe(response => {
         this.ventas_medios = response;
-        console.log(this.ventas_medios);
+       
         this.getTotalPagado()
         this.getTotalPagadoMes();
         this.getTotalPagadoDia();
@@ -58,22 +58,25 @@ export class VentasMediosComponent implements OnInit {
   getTotalPagado(): number {
 
      this.totalAnio=this.ventas_medios.forYear.reduce((acc:any, curr:any) => acc + curr.totalPaid, 0);
-    console.log(this.totalAnio);
-    return  this.totalAnio;
+     
+     return  this.totalAnio;
   }
 
-   getTotalPagadoMes(): number {
+
+  getTotalPagadoMes(): number {
 
      this.totalMes=this.ventas_medios.forMonth.reduce((acc:any, curr:any) => acc + curr.totalPaid, 0);
-    console.log(this.totalMes);
-    return  this.totalMes;
+     
+     return  this.totalMes;
+
   }
 
     getTotalPagadoDia(): number {
+    
+      this.totalDia=this.ventas_medios.forDay.reduce((acc:any, curr:any) => acc + curr.totalPaid, 0);
+     
+      return  this.totalDia;
 
-     this.totalDia=this.ventas_medios.forDay.reduce((acc:any, curr:any) => acc + curr.totalPaid, 0);
-    console.log(this.totalDia);
-    return  this.totalDia;
   }
 
    

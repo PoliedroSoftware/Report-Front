@@ -27,33 +27,18 @@ export class InventoryComponent implements OnInit {
    this.recuperarPorpagina(1, 10)
   
 }
-  
-recuperarTodos():void {
-    this.inventarios=[];
-      this.inventoryService.getInventario().subscribe(result =>{
-        result.forEach(nombre => this.inventarios.push(nombre));
-        console.log(this.inventarios);
-        console.log(this.inventarios.length);
-        this.Resultados=this.inventarios.length/4;
-        console.log(this.Resultados);
-      
 
-     })
-    };
 
    
 
 
 
-    recuperarPorpagina(valor3:any, valor4:any):void {
-      alert(77777777);
-    this.inventarios=[];
-      this.inventoryService.getInventarioP(valor3, valor4).subscribe(result =>{
-        result.forEach(nombre => this.inventarios.push(nombre));
-        console.log(this.inventarios);
-        console.log(this.inventarios.length);
-        this.Resultados=this.inventarios.length/4;
-        console.log(this.Resultados);
+    recuperarPorpagina(valor1:any, valor2:any):void {
+      
+        this.inventarios=[];
+        this.inventoryService.getInventarioP(valor1, valor2).subscribe(result =>{
+        result.forEach(dato => this.inventarios.push(dato));
+   
       
 
      })

@@ -14,14 +14,12 @@ export class UtilidadService {
 
    private url: string =environment.url;
 
-   getInventario(): Observable<Utilidad[]> {
-    return this.http.get<Utilidad[]>(this.url);
-  }
+   
 
   getUtilidadP(PNumber:number, PSize:number): Observable<Utilidad[]> {
-    console.log(this.url);
+ 
+    
     return this.http.get<Utilidad[]>(this.url+'/utility-report?PageNumber='+PNumber+'&PageSize='+PSize);
     
-    
-  }
-}
+    }
+ }
