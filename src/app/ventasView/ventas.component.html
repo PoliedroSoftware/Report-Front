@@ -1,5 +1,5 @@
 
-<!--
+
 <div class="table-container table-año">
 
   <section class="tables">
@@ -25,26 +25,17 @@
           <th>Ventas</th>
         </tr>
       </thead>
-      <tbody>-->
+      <tbody>
         <!-- 7 filas estáticas de ejemplo, traer la información desde la API -->
         
-        <!--<tr *ngFor="let row of data.slice(0, 7)">
-          <td>{{ row.anio }}</td>
-          <td>{{ row.utilidad }}</td>
+      <tr *ngFor="let row of ventas.forYear">
+          <td>{{ row.year }}</td>
+          <td>{{ row.sale }}</td>
         </tr>
       </tbody>
     </table>
   
 
-    <nav class="pagination-container" aria-label="Page navigation example">
-      <ul class="pagination">
-        <li class="controllers"><p>Previous</p></li>
-        <li class="page-item"><a class="page-link" href="#">1</a></li>
-        <li class="page-item"><a class="page-link" href="#">2</a></li>
-        <li class="page-item"><a class="page-link" href="#">3</a></li>
-        <li class="controllers"><p>Next</p></li>
-      </ul>
-    </nav>
   </section>
 </div>
 
@@ -75,26 +66,18 @@
           <th>Ventas</th>
         </tr>
       </thead>
-      <tbody>-->
+      <tbody>
         <!-- 7 filas estáticas de ejemplo, traer la información desde la API -->
-       <!-- <tr *ngFor="let row of data2.slice(0, 7)">
-          <td>{{ row.anio }}</td>
-          <td>{{ row.mes }}</td>
-          <td>{{ row.utilidad }}</td>
+        <tr *ngFor="let row of ventas.forMonth">
+          <td>{{ row.numberMonth }}</td>
+          <td>{{ row.month }}</td>
+          <td>{{ row.year }}</td>
+          <td>{{ row.sale }}</td>
         </tr>
       </tbody>
     </table>
   
 
-    <nav class="pagination-container" aria-label="Page navigation example">
-      <ul class="pagination">
-        <li class="controllers"><p>Previous</p></li>
-        <li class="page-item"><a class="page-link" href="#">1</a></li>
-        <li class="page-item"><a class="page-link" href="#">2</a></li>
-        <li class="page-item"><a class="page-link" href="#">3</a></li>
-        <li class="controllers"><p>Next</p></li>
-      </ul>
-    </nav>
   </section>
 </div>
 
@@ -120,33 +103,36 @@
     <table class="custom-table">
       <thead>
         <tr>
-          <th>Año</th>
+          <th>Fecha</th>
           <th>Mes</th>
           <th>Fecha</th>
+           <th>Año</th>
           <th>Ventas</th>
         </tr>
       </thead>
-      <tbody>-->
+      <tbody>
         <!-- 7 filas estáticas de ejemplo, traer la información desde la API -->
-       <!-- <tr *ngFor="let row of data3.slice(0, 7)">
-          <td>{{ row.anio }}</td>
-          <td>{{ row.mes }}</td>
-          <td>{{ row.fecha }}</td>
-          <td>{{ row.utilidad }}</td>
+      <tr *ngFor="let row of ventas.forDay">
+          <td>{{ row.date }}</td>
+          <td>{{ row.numberMonth }}</td>
+          <td>{{ row.month }}</td>
+          <td>{{ row.year }}</td>
+          <td>{{ row.sale }}</td>
         </tr>
       </tbody>
-    </table>-->
-  
-<!-- es un ejemplo -->
- <!--
-    <nav class="pagination-container" aria-label="Page navigation example">
+    </table>
+
+   <nav class="pagination-container" aria-label="Page navigation example">
       <ul class="pagination">
-        <li class="controllers"><p>Previous</p></li>
-        <li class="page-item"><a class="page-link" href="#">1</a></li>
-        <li class="page-item"><a class="page-link" href="#">2</a></li>
-        <li class="page-item"><a class="page-link" href="#">3</a></li>
-        <li class="controllers"><p>Next</p></li>
+    
+        <li class="page-item"><a class="page-link"  (click)="getVentaService(1,10)">1</a></li>
+        <li class="page-item"><a class="page-link"  (click)="getVentaService(2,10)">2</a></li>
+        <li class="page-item"><a class="page-link"  (click)="getVentaService(3,10)">3</a></li>
+        <li class="page-item"><a class="page-link"  (click)="getVentaService(4,10)">4</a></li>
+        <li class="page-item"><a class="page-link"  (click)="getVentaService(5,10)">5</a></li>
+       
       </ul>
     </nav>
   </section>
-</div>-->
+</div>
+ 

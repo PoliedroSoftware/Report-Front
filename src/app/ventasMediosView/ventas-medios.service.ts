@@ -14,6 +14,7 @@ export class VentasMediosService {
  
 
    getVentasMedios(PNumber:number, PSize:number): Observable<any> {
+
      return this.http.get(this.url+'payment-method-report?PageNumber='+PNumber+'&PageSize='+PSize);
    }
 

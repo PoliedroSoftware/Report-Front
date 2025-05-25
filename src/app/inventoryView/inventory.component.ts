@@ -3,9 +3,9 @@ import { CommonModule } from '@angular/common';
 
 import { Observable, of } from 'rxjs';
 
-import { Inventarios } from '../inventory';
+import { Inventarios } from './inventory';
 //import { HEROES } from './mock-heroes';
-import { InventoryService } from '../inventory.service';
+import { InventoryService } from './inventory.service';
 
 @Component({
   selector: 'app-inventory',
@@ -28,28 +28,14 @@ export class InventoryComponent implements OnInit {
   
 }
 
-
-   
-
-
-
-    recuperarPorpagina(valor1:any, valor2:any):void {
+   recuperarPorpagina(valor1:any, valor2:any):void {
       
         this.inventarios=[];
         this.inventoryService.getInventarioP(valor1, valor2).subscribe(result =>{
         result.forEach(dato => this.inventarios.push(dato));
    
-      
-
-     })
+    })
     };
-
-  
-
-
- 
-
-     
 }
 
 

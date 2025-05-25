@@ -14,8 +14,9 @@ export class VentasService {
   constructor( private http:HttpClient) { }
 
    
-     getVentas(PNumber:number, PSize:number): Observable<Ventas[]> {
+  getVentas(PNumber:number, PSize:number): Observable<Ventas[]> {
        
+      
        return this.http.get<Ventas[]>(this.url+'sales-report?PageNumber='+PNumber+'&PageSize='+PSize);
        
     } 

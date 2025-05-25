@@ -29,12 +29,13 @@ export class VentasComponent {
    
     ngOnInit() {
       // Agrupar data2 por año y mes
-      this.getVentaService(); 
+      this.getVentaService(1,10); 
      }
 
-     getVentaService(): void {
-          this.ventasService.getVentas(1,10).subscribe(response => {
+     getVentaService(valor1:any, valor2:any): void {
+          this.ventasService.getVentas(valor1, valor2).subscribe(response => {
           this.ventas = response;
+      
         
         })
      };
