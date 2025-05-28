@@ -5,6 +5,8 @@ import { InventoryComponent } from './inventoryView/inventory.component';
 import { VentasComponent } from './ventasView/ventas.component';
 import { VentasMediosComponent } from './ventasMediosView/ventas-medios.component';
 import { BorradoresComponent } from './borradoresView/borradores.component';
+import { DraftViewComponent } from './draftView/draftView.component';
+
 
 export const routes: Routes = [
   { path: 'utilidad', component: UtilidadComponent },
@@ -12,5 +14,7 @@ export const routes: Routes = [
   { path: 'inventario', component: InventoryComponent },
   { path: 'ventas', component: VentasComponent  },
   { path: 'ventas-medios', component: VentasMediosComponent  },
-  { path: 'borrador', component: BorradoresComponent  }
+  { path: 'borrador', component: BorradoresComponent },
+  { path: 'draft', component:  DraftViewComponent  },
+
 ];
