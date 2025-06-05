@@ -20,8 +20,7 @@ export class InventoryComponent implements OnInit {
   valor2:any=2;
   arrayPages:[]=[];
   Resultados:number=0;
- 
-  constructor(private inventoryService: InventoryService) { }
+constructor(private inventoryService: InventoryService) { }
 
    ngOnInit(): void {
    this.recuperarPorpagina(1, 10)

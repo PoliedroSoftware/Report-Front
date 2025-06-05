@@ -1,16 +1,16 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { ProveedoresService  } from './proveedores.service';
+import { SuppliersService  } from './suppliers.service';
 
 @Component({
   selector: 'app-proveedores',
   standalone: true,
   imports: [CommonModule],
-  templateUrl: './proveedores.component.html',
-  styleUrl: './proveedores.component.css'
+  templateUrl: './suppliers.component.html',
+  styleUrl: './suppliers.css'
 })
 
-export class ProveedoresComponent {
+export class SuppliersComponent {
   // Ejemplo. Luego se debe reemplazar estos datos por los que se obtengan de la API. Traer los datos desde la tabla.
   data = [
     { proveedor: "NAME", saldo: '77.831.294' },
@@ -51,7 +51,7 @@ data2 = [
  
 
 
-  constructor(private proveedoresService: ProveedoresService) { }
+  constructor(private suppliersService: SuppliersService) { }
  
   ngOnInit() {
     // Agrupar data2 por año y mes
@@ -65,11 +65,10 @@ data2 = [
    getProveedorService(valor1:any, valor2:any):void {
       
         this.proveedores=[];
-        this.proveedoresService.getProveedores(valor1, valor2).subscribe(result =>{
+        this.suppliersService.getProveedores(valor1, valor2).subscribe(result =>{
         result.forEach(dato => this.proveedores.push(dato));
+        
 
-      
-   
       })
     };
 

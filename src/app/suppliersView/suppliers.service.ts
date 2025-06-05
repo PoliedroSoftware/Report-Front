@@ -1,6 +1,6 @@
 
 import { Injectable } from '@angular/core';
-import { Proveedores } from './proveedores';
+import { Suppliers } from './suppliers';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { environment } from '../../environments/environment';
@@ -11,7 +11,7 @@ import { environment } from '../../environments/environment';
 @Injectable({
   providedIn: 'root'
 })
-export class ProveedoresService {
+export class SuppliersService {
 
    constructor(private http:HttpClient) { }
 
@@ -19,10 +19,10 @@ export class ProveedoresService {
   
      
   
-    getProveedores(PNumber:number, PSize:number): Observable<Proveedores[]> {
+    getProveedores(PNumber:number, PSize:number): Observable<Suppliers[]> {
    
        console.log(this.url+'suppliers-report?PageNumber='+PNumber+'&PageSize='+PSize);
-       return this.http.get<Proveedores[]>(this.url+'suppliers-report?PageNumber='+PNumber+'&PageSize='+PSize);
+       return this.http.get<Suppliers[]>(this.url+'suppliers-report?PageNumber='+PNumber+'&PageSize='+PSize);
       
     }
 }

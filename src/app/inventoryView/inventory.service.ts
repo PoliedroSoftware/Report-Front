@@ -13,14 +13,10 @@ export class InventoryService {
  private url: string =environment.url
   constructor( private http:HttpClient) { }
 
-   getInventario(): Observable<Inventarios[]> {
-    return this.http.get<Inventarios[]>(this.url);
-    
-  }
+ 
   getInventarioP(PNumber:number, PSize:number){
 
     return this.http.get<Inventarios[]>(this.url+'/inventory-report?PageNumber='+PNumber+'&PageSize='+PSize);
-
-    
+     
   }
 }

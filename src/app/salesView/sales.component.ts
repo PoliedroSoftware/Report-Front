@@ -1,18 +1,18 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 
-import { Ventas} from './ventas';
+import { Ventas} from './sales';
 //import { HEROES } from './mock-heroes';
-import { VentasService } from './ventas.service';
+import { VentasService } from './sales.service';
 
 
 @Component({
   selector: 'app-ventas',
   imports: [CommonModule],
-  templateUrl: './ventas.component.html',
-  styleUrl: './ventas.component.css'
+  templateUrl: './sales.component.html',
+  styleUrl: './sales.component.css'
 })
-export class VentasComponent {
+export class SalesComponent {
   
    
        utilidades: Array<any>=[];

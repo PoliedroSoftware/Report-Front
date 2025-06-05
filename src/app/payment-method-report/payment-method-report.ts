@@ -1,4 +1,4 @@
-export interface VentasMedios {
+export interface PaymentMethodReport {
 
       anio: string,
       metodoPago:string,

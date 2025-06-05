@@ -1,17 +1,17 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { VentasMedios } from './ventas-medios';
+import { PaymentMethodReport } from './payment-method-report';
 //import { HEROES } from './mock-heroes';
-import { VentasMediosService } from './ventas-medios.service';
+import { PaymentMethodService } from './payment-method.service';
 
 @Component({
   selector: 'app-ventas-medios',
   standalone: true,
   imports: [CommonModule],
-  templateUrl: './ventas-medios.component.html',
-  styleUrl: './ventas-medios.component.css'
+  templateUrl: './payment-method-report.component.html',
+  styleUrl: './payment-method-report.component.css'
 })
-export class VentasMediosComponent implements OnInit {
+export class PaymentMethodComponent implements OnInit {
 
      utilidades: Array<any>=[];
      miArray: any[][] = [];
@@ -30,7 +30,7 @@ export class VentasMediosComponent implements OnInit {
  
 
 
-  constructor(private ventasMediosService: VentasMediosService) { }
+  constructor(private ventasMediosService: PaymentMethodService) { }
  
   ngOnInit() {
     // Agrupar data2 por año y mes
@@ -39,14 +39,13 @@ export class VentasMediosComponent implements OnInit {
    
   }
 
-
         getVentasMediosService(valor1:any, valor2:any): void {
         this.ventasMediosService.getVentasMedios(valor1, valor2).subscribe(response => {
         this.ventas_medios = response;
        
-        this.getTotalPagado()
-        this.getTotalPagadoMes();
-        this.getTotalPagadoDia();
+         this.getTotalPagado()
+         this.getTotalPagadoMes();
+         this.getTotalPagadoDia();
      })
 
    };
@@ -66,7 +65,6 @@ export class VentasMediosComponent implements OnInit {
   getTotalPagadoMes(): number {
 
      this.totalMes=this.ventas_medios.forMonth.reduce((acc:any, curr:any) => acc + curr.totalPaid, 0);
-     
      return  this.totalMes;
 
   }
@@ -74,12 +72,10 @@ export class VentasMediosComponent implements OnInit {
     getTotalPagadoDia(): number {
     
       this.totalDia=this.ventas_medios.forDay.reduce((acc:any, curr:any) => acc + curr.totalPaid, 0);
-     
       return  this.totalDia;
 
-  }
 
-   
+  }
 
 }
 

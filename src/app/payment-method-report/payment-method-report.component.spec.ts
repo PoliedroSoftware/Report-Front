@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { UtilidadComponent } from './utilidad.component';
+import { PaymentMethodComponent } from './payment-method-report.component';
 
-describe('UtilidadComponent', () => {
-  let component: UtilidadComponent;
-  let fixture: ComponentFixture<UtilidadComponent>;
+describe('VentasMediosComponent', () => {
+  let component: PaymentMethodComponent;
+  let fixture: ComponentFixture<PaymentMethodComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [UtilidadComponent]
+      imports: [PaymentMethodComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(UtilidadComponent);
+    fixture = TestBed.createComponent(PaymentMethodComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
@@ -21,3 +21,4 @@ describe('UtilidadComponent', () => {
     expect(component).toBeTruthy();
   });
 });
+

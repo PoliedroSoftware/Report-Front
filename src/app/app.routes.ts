@@ -1,20 +1,21 @@
 import { Routes } from '@angular/router';
-import { UtilidadComponent } from './utilidadView/utilidad.component';
-import { ProveedoresComponent } from './proveedoresView/proveedores.component';
+import { UtilityComponent } from './utility-view/utility-view.component';
+import { SuppliersComponent } from './suppliersView/suppliers.component';
 import { InventoryComponent } from './inventoryView/inventory.component';
-import { VentasComponent } from './ventasView/ventas.component';
-import { VentasMediosComponent } from './ventasMediosView/ventas-medios.component';
+import { SalesComponent } from './salesView/sales.component';
+import { PaymentMethodComponent } from './payment-method-report/payment-method-report.component';
 import { BorradoresComponent } from './borradoresView/borradores.component';
 import { DraftViewComponent } from './draftView/draftView.component';
 
 
 export const routes: Routes = [
-  { path: 'utilidad', component: UtilidadComponent },
-  { path: 'proveedores', component: ProveedoresComponent },
-  { path: 'inventario', component: InventoryComponent },
-  { path: 'ventas', component: VentasComponent  },
-  { path: 'ventas-medios', component: VentasMediosComponent  },
+ // { path: 'utilidad', component: UtilidadComponent },
+  { path: 'suppliers', component: SuppliersComponent },
+  { path: 'inventory', component: InventoryComponent },
+  { path: 'sales', component: SalesComponent  },
+  { path: 'payment-method', component: PaymentMethodComponent},
   { path: 'borrador', component: BorradoresComponent },
   { path: 'draft', component:  DraftViewComponent  },
+  { path: 'utility', component:  UtilityComponent  },
 
 ];

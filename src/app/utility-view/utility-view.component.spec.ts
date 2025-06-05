@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { VentasMediosComponent } from './ventas-medios.component';
+import { UtilityViewComponent } from './utility-view.component';
 
-describe('VentasMediosComponent', () => {
-  let component: VentasMediosComponent;
-  let fixture: ComponentFixture<VentasMediosComponent>;
+describe('UtilityViewComponent', () => {
+  let component: UtilityViewComponent;
+  let fixture: ComponentFixture<UtilityViewComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [VentasMediosComponent]
+      imports: [UtilityViewComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(VentasMediosComponent);
+    fixture = TestBed.createComponent(UtilityViewComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
@@ -21,4 +21,3 @@ describe('VentasMediosComponent', () => {
     expect(component).toBeTruthy();
   });
 });
-
