@@ -1,11 +1,11 @@
 import { Routes } from '@angular/router';
-import { UtilityComponent } from './utility-view/utility-view.component';
-import { SuppliersComponent } from './suppliersView/suppliers.component';
-import { InventoryComponent } from './inventoryView/inventory.component';
-import { SalesComponent } from './salesView/sales.component';
-import { PaymentMethodComponent } from './payment-method-report/payment-method-report.component';
-import { BorradoresComponent } from './borradoresView/borradores.component';
-import { DraftViewComponent } from './draftView/draftView.component';
+import { UtilityComponent } from '@components/utility-view/utility-view.component';
+import { SuppliersComponent } from '@components/suppliersView/suppliers.component';
+import { InventoryComponent } from '@components/inventoryView/inventory.component';
+import { SalesComponent } from '@components/salesView/sales.component';
+import { PaymentMethodComponent } from '@components/payment-method-report/payment-method-report.component';
+import { BorradoresComponent } from '@components/borradoresView/borradores.component';
+import { DraftViewComponent } from '@components/draftView/draftView.component';
 
 
 export const routes: Routes = [

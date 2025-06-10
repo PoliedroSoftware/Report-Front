@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
-import { Ventas } from './sales';
+import { Ventas } from '@components/salesView/sales';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { environment } from '../../environments/environment';
+import { environment } from '../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -11,10 +11,10 @@ export class VentasService {
 
   //inventarioUrl='https://gr09yevej5.execute-api.us-east-2.amazonaws.com/report/api/v1/inventory-report';
    private url: string =environment.url
-   constructor( private http:HttpClient) { }
+   constructor(private http:HttpClient) { }
 
    
-   getVentas(PNumber:number, PSize:number): Observable<Ventas[]> {
+   getSales(PNumber:number, PSize:number): Observable<Ventas[]> {
        
       
        return this.http.get<Ventas[]>(this.url+'sales-report?PageNumber='+PNumber+'&PageSize='+PSize);

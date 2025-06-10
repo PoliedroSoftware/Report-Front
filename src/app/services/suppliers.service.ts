@@ -1,9 +1,10 @@
 
 import { Injectable } from '@angular/core';
-import { Suppliers } from './suppliers';
+import { Suppliers } from '@components/suppliersView/suppliers';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { environment } from '../../environments/environment';
+import { environment } from '../environments/environment';
+
 
 //import { HEROES } from './mock-heroes';
 
@@ -19,7 +20,7 @@ export class SuppliersService {
   
      
   
-    getProveedores(PNumber:number, PSize:number): Observable<Suppliers[]> {
+    getSuppliers(PNumber:number, PSize:number): Observable<Suppliers[]> {
    
        console.log(this.url+'suppliers-report?PageNumber='+PNumber+'&PageSize='+PSize);
        return this.http.get<Suppliers[]>(this.url+'suppliers-report?PageNumber='+PNumber+'&PageSize='+PSize);

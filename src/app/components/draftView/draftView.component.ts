@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
+import { environment } from '@environments/environment';
 @Component({
   selector: 'app-draft',
   imports: [CommonModule],
@@ -8,10 +8,12 @@ import { CommonModule } from '@angular/common';
   styleUrl: './draft.component.css'
 })
 export class DraftViewComponent {
+  varPaginacion:any=environment.paginationVar;
 
 
 
             // Ejemplo. Luego se debe reemplazar estos datos por los que se obtengan de la API. Traer los datos desde la tabla.
+            // Datos mockiados mientras se hace el backend y la api
   data = [
     { Fecha: "13-09/2022", Referencia:122222, Cliente: '77.831.294',  Total:'qwerty' },
     { Fecha: "14/05/2019", Referencia:122222,  Cliente: '77.831.294', Total:12233333 },

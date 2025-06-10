@@ -1,9 +1,9 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-
+import { environment } from '@environments/environment';
 import { Ventas} from './sales';
 //import { HEROES } from './mock-heroes';
-import { VentasService } from './sales.service';
+import { VentasService } from '@services/sales.service';
 
 
 @Component({
@@ -19,6 +19,7 @@ export class SalesComponent {
        miArray: any[][] = [];
        valor1:any=1
        valor2:any=2;
+       varPaginacion:any=environment.paginationVar;
        arrayPages:[]=[];
        ventas: any;
        totalAnio:any;
@@ -29,11 +30,11 @@ export class SalesComponent {
    
     ngOnInit() {
       // Agrupar data2 por año y mes
-      this.getVentaService(1,10); 
+      this.getSaleService(1,this.varPaginacion); 
      }
 
-     getVentaService(valor1:any, valor2:any): void {
-          this.ventasService.getVentas(valor1, valor2).subscribe(response => {
+     getSaleService(valor1:any, valor2:any): void {
+          this.ventasService.getSales(valor1, valor2).subscribe(response => {
           this.ventas = response;
       
         

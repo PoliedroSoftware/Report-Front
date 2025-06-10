@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
-import { PaymentMethodReport} from './payment-method-report';
+import { PaymentMethodReport} from '@components/payment-method-report/payment-method-report';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { environment } from '../../environments/environment';
+import { environment } from '../environments/environment';
 @Injectable({
   providedIn: 'root'
 })
@@ -15,7 +15,7 @@ export class PaymentMethodService {
 
  
 
-   getVentasMedios(PNumber:number, PSize:number): Observable<any> {
+   getPaymenMethod(PNumber:number, PSize:number): Observable<any> {
 
      return this.http.get(this.url+'payment-method-report?PageNumber='+PNumber+'&PageSize='+PSize);
    }

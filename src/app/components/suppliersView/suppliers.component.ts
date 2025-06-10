@@ -1,13 +1,17 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { SuppliersService  } from './suppliers.service';
+import { SuppliersService  } from '@services/suppliers.service';
+import { environment } from '@environments/environment';
+
 
 @Component({
   selector: 'app-proveedores',
   standalone: true,
   imports: [CommonModule],
   templateUrl: './suppliers.component.html',
-  styleUrl: './suppliers.css'
+  styleUrl: './suppliers.css',
+
+ 
 })
 
 export class SuppliersComponent {
@@ -36,10 +40,10 @@ data2 = [
 
      proveedores: Array<any>=[];
      miArray: any[][] = [];
- 
-      valor1:any=1
-      valor2:any=2;
-      arrayPages:[]=[];
+     varPaginacion:any=environment.paginationVar;
+     valor1:any=1
+     valor2:any=2;
+    arrayPages:[]=[];
      
       ventas_medios: any;
       totalAnio:any;
@@ -56,16 +60,16 @@ data2 = [
   ngOnInit() {
     // Agrupar data2 por año y mes
    
-    this.getProveedorService(1,10); 
+    this.getSupplierService(1,this.varPaginacion); 
    
   }
 
 
        
-   getProveedorService(valor1:any, valor2:any):void {
+   getSupplierService(valor1:any, valor2:any):void {
       
         this.proveedores=[];
-        this.suppliersService.getProveedores(valor1, valor2).subscribe(result =>{
+        this.suppliersService.getSuppliers(valor1, valor2).subscribe(result =>{
         result.forEach(dato => this.proveedores.push(dato));
         
 

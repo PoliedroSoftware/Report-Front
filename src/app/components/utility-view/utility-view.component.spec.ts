@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { UtilityViewComponent } from './utility-view.component';
+import {  UtilityComponent } from './utility-view.component';
 
 describe('UtilityViewComponent', () => {
-  let component: UtilityViewComponent;
-  let fixture: ComponentFixture<UtilityViewComponent>;
+  let component: UtilityComponent;
+  let fixture: ComponentFixture<UtilityComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [UtilityViewComponent]
+      imports: [UtilityComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(UtilityViewComponent);
+    fixture = TestBed.createComponent(UtilityComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
