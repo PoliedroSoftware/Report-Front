@@ -1,16 +1,21 @@
 import { Routes } from '@angular/router';
-import { UtilidadComponent } from './utilidadView/utilidad.component';
-import { ProveedoresComponent } from './proveedoresView/proveedores.component';
-import { InventoryComponent } from './inventoryView/inventory.component';
-import { VentasComponent } from './ventasView/ventas.component';
-import { VentasMediosComponent } from './ventasMediosView/ventas-medios.component';
-import { BorradoresComponent } from './borradoresView/borradores.component';
+import { UtilityComponent } from '@components/utility-view/utility-view.component';
+import { SuppliersComponent } from '@components/suppliersView/suppliers.component';
+import { InventoryComponent } from '@components/inventoryView/inventory.component';
+import { SalesComponent } from '@components/salesView/sales.component';
+import { PaymentMethodComponent } from '@components/payment-method-report/payment-method-report.component';
+import { BorradoresComponent } from '@components/borradoresView/borradores.component';
+import { DraftViewComponent } from '@components/draftView/draftView.component';
+
 
 export const routes: Routes = [
-  { path: 'utilidad', component: UtilidadComponent },
-  { path: 'proveedores', component: ProveedoresComponent },
-  { path: 'inventario', component: InventoryComponent },
-  { path: 'ventas', component: VentasComponent  },
-  { path: 'ventas-medios', component: VentasMediosComponent  },
-  { path: 'borrador', component: BorradoresComponent  }
+ // { path: 'utilidad', component: UtilidadComponent },
+  { path: 'suppliers', component: SuppliersComponent },
+  { path: 'inventory', component: InventoryComponent },
+  { path: 'sales', component: SalesComponent  },
+  { path: 'payment-method', component: PaymentMethodComponent},
+  { path: 'borrador', component: BorradoresComponent },
+  { path: 'draft', component:  DraftViewComponent  },
+  { path: 'utility', component:  UtilityComponent  },
+
 ];
